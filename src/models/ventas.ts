@@ -2,6 +2,7 @@ import { Model, DataTypes } from "sequelize";
 import { database } from "../database/db";
 import { Productos } from "./productos";
 import { Cliente } from "./cliente";
+import { ProductoVentas } from "./productoVentas";
 
 export class Ventas extends Model {
   public id?: number;
@@ -20,16 +21,6 @@ export interface VentasI {
   descuentos: number;
   total: number;
   clienteId: number;
-}
-
-export class ProductoVentas extends Model {
-    public productoId!: number;
-    public ventaId!: number;
-}
-
-export interface ProductoVentasI {
-    productoId: number;
-    ventaId: number;
 }
 
 Ventas.init(
@@ -57,15 +48,6 @@ Ventas.init(
   },
   {
     tableName: "ventas",
-    sequelize: database,
-    timestamps: false
-  }
-);
-
-ProductoVentas.init(
-  {
-  },{
-    tableName: "productoVentas",
     sequelize: database,
     timestamps: false
   }

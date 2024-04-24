@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import { ProductoVentas, ProductoVentasI } from '../models/ventas';
+import { ProductoVentas, ProductoVentasI } from '../models/productoVentas';
 
 export class ProductoVentasController {
 

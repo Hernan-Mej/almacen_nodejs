@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { TipoProductos, TipoProductosI } from "../models/productos";
+import { TipoProductos, TipoProductosI } from "../models/tipoProductos";
 
 export class TipoProductoController {
     public async getAllTipoProducto(req: Request, res: Response) {

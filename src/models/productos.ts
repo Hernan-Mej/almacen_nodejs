@@ -1,14 +1,6 @@
 import { Model, DataTypes } from "sequelize";
 import { database } from "../database/db";
-
-export class TipoProductos extends Model {
-    public id?: number;
-    public nombre!: string;
-}
-
-export interface TipoProductosI {
-    nombre: string;
-}
+import { TipoProductos } from "./tipoProductos";
 
 export class Productos extends Model {
     public id?: number;
@@ -28,20 +20,6 @@ export interface ProductosI {
     cantidad: number;
     tipoProductoID: number;
 }
-
-TipoProductos.init(
-    {
-        nombre: {
-            type: DataTypes.STRING,
-            allowNull: false
-        }
-    },
-    {
-        tableName: "tipoProductos",
-        sequelize: database,
-        timestamps: false
-    }
-);
 
 Productos.init(
     {
